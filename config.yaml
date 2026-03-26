@@ -1,0 +1,253 @@
+# ============================================================
+#  OPPORTUNITY HUNTER — Profile Configuration
+#  Άλλαξε μόνο αυτό το αρχείο. Μην αγγίξεις τον κώδικα.
+# ============================================================
+
+profile:
+  name: "Athanasios Georgoulas"
+  age: 25
+  location: "Πρώτη Σερρών"
+  region: "Κεντρική Μακεδονία"
+  status: "unemployed"          # unemployed / employed / student
+  dypa_card: true               # Ενεργή κάρτα ΔΥΠΑ
+  family: "single_parent"       # single / single_parent / married
+  income_annual: 4286           # Ετήσιο εισόδημα (€)
+  has_property: false
+  target_countries:
+    - "Greece"
+    - "Turkey"
+    - "Remote"
+
+# ─── Keywords που θεωρούνται υψηλής προτεραιότητας ──────────
+keywords_high:
+  - "τηλεπικοινωνι"
+  - "telecom"
+  - "5g"
+  - "6g"
+  - "iot"
+  - "δίκτυ"
+  - "network"
+  - "fiber"
+  - "οπτικ"
+  - "πληροφορικ"
+  - "software"
+  - "embedded"
+  - "νέοι"
+  - "νέους"
+  - "άνεργ"
+  - "ανέργ"
+  - "voucher"
+  - "κατάρτιση"
+  - "επιμόρφωση"
+  - "εσπα"
+  - "espa"
+  - "δυπα"
+  - "dypa"
+  - "επιδότηση"
+  - "επιχορήγηση"
+  - "υποτροφία"
+  - "scholarship"
+  - "grant"
+  - "erasmus"
+  - "turkey"
+  - "turkish"
+  - "τουρκ"
+  - "istanbul"
+  - "yunus emre"
+  - "tubitak"
+  - "türkiye"
+  - "horizon"
+  - "eures"
+  - "euraxess"
+  - "μονογονεϊκ"
+  - "κεα"
+  - "αγροτικ"
+  - "σερρ"
+
+keywords_medium:
+  - "πρακτικ"
+  - "internship"
+  - "φοιτητ"
+  - "μεταπτυχιακ"
+  - "master"
+  - "phd"
+  - "remote"
+  - "τηλεργασ"
+  - "freelance"
+  - "startup"
+  - "ψηφιακ"
+  - "digital"
+
+keywords_upcoming:
+  - "σύντομα"
+  - "προσεχώς"
+  - "upcoming"
+  - "coming soon"
+  - "θα ανοίξει"
+  - "αναμένεται"
+  - "νέα πρόσκληση"
+  - "νέος κύκλος"
+  - "new call"
+  - "θα εκδοθεί"
+  - "υπό έκδοση"
+  - "προεγγραφή"
+  - "2027"
+
+# ─── Sites προς παρακολούθηση ────────────────────────────────
+sources:
+  - name: "ΔΥΠΑ — Νέα"
+    url: "https://www.dypa.gov.gr/nea-anakoinoseis"
+    selector: "h2 a,h3 a,article a,.views-row a"
+    base_url: "https://www.dypa.gov.gr"
+    category: "🏛️ ΔΥΠΑ"
+    priority: HIGH
+
+  - name: "ΔΥΠΑ — Προγράμματα"
+    url: "https://www.dypa.gov.gr/programmata"
+    selector: "h2 a,h3 a,.views-row a"
+    base_url: "https://www.dypa.gov.gr"
+    category: "🏛️ ΔΥΠΑ"
+    priority: HIGH
+
+  - name: "ΕΣΠΑ"
+    url: "https://www.espa.gr/el/pages/staticProkirixeis.aspx"
+    selector: "table a,h3 a,td a"
+    base_url: "https://www.espa.gr"
+    category: "💶 ΕΣΠΑ"
+    priority: HIGH
+
+  - name: "Ανταγωνιστικότητα"
+    url: "https://www.antagonistikotita.gr/prokirixeis"
+    selector: "h3 a,h2 a,article a"
+    base_url: "https://www.antagonistikotita.gr"
+    category: "💶 ΕΣΠΑ"
+    priority: HIGH
+
+  - name: "gov.gr Επιδόματα"
+    url: "https://www.gov.gr/ipiresies/oikonomia-kai-forologhia/epidedomata"
+    selector: "h3 a,h2 a,.service-item a"
+    base_url: "https://www.gov.gr"
+    category: "🏛️ gov.gr"
+    priority: HIGH
+
+  - name: "ΟΠΕΚΑ"
+    url: "https://www.opeka.gr/programmata"
+    selector: "h2 a,h3 a,article a"
+    base_url: "https://www.opeka.gr"
+    category: "🏛️ ΟΠΕΚΑ"
+    priority: MEDIUM
+
+  - name: "ΤΕΕ"
+    url: "https://www.tee.gr/gr/nea/"
+    selector: "h2 a,h3 a,article a"
+    base_url: "https://www.tee.gr"
+    category: "🔧 ΤΕΕ"
+    priority: HIGH
+
+  - name: "Περιφέρεια Κ. Μακεδονίας"
+    url: "https://www.pkm.gov.gr/el/news"
+    selector: "h2 a,h3 a,article a"
+    base_url: "https://www.pkm.gov.gr"
+    category: "🌍 Περιφέρεια"
+    priority: MEDIUM
+
+  - name: "Startup Greece"
+    url: "https://startupgreece.gov.gr/news"
+    selector: "h2 a,h3 a,article a"
+    base_url: "https://startupgreece.gov.gr"
+    category: "🚀 Startup"
+    priority: MEDIUM
+
+  - name: "EURES Telecom"
+    url: "https://eures.europa.eu/jobs_en?page=1&keywords=telecom+network&country=GR"
+    selector: "h2 a,h3 a,.job-title a"
+    base_url: "https://eures.europa.eu"
+    category: "🇪🇺 EURES"
+    priority: HIGH
+
+  - name: "EURAXESS"
+    url: "https://euraxess.ec.europa.eu/jobs/search?keywords=5G+network+IoT"
+    selector: "h3 a,h2 a"
+    base_url: "https://euraxess.ec.europa.eu"
+    category: "🇪🇺 EURAXESS"
+    priority: MEDIUM
+
+  - name: "EU Youth Portal"
+    url: "https://youth.europa.eu/go/en/opportunities_en"
+    selector: "h3 a,h2 a,.opportunity a"
+    base_url: "https://youth.europa.eu"
+    category: "🇪🇺 EU Youth"
+    priority: MEDIUM
+
+  - name: "Türkiye Scholarships"
+    url: "https://turkiyeburslari.gov.tr/en/announcements"
+    selector: "h2 a,h3 a,article a"
+    base_url: "https://turkiyeburslari.gov.tr"
+    category: "🇹🇷 Τουρκία"
+    priority: HIGH
+
+  - name: "TÜBİTAK"
+    url: "https://www.tubitak.gov.tr/en/funds/academy/national-support-programmes"
+    selector: "h3 a,h2 a,article a"
+    base_url: "https://www.tubitak.gov.tr"
+    category: "🇹🇷 Τουρκία"
+    priority: MEDIUM
+
+  - name: "Kariera Telecom"
+    url: "https://www.kariera.gr/en/jobs?q=telecom+network&l=Greece"
+    selector: "h2 a,h3 a,.job-title a"
+    base_url: "https://www.kariera.gr"
+    category: "💼 Εργασία"
+    priority: HIGH
+
+  - name: "Skywalker"
+    url: "https://www.skywalker.gr/jobs/search?q=τηλεπικοινωνίες"
+    selector: "h2 a,h3 a,.listing-title a"
+    base_url: "https://www.skywalker.gr"
+    category: "💼 Εργασία"
+    priority: HIGH
+
+  - name: "Epixeiro"
+    url: "https://www.epixeiro.gr/category/epidotiseis/"
+    selector: "h2 a,h3 a,.post-title a"
+    base_url: "https://www.epixeiro.gr"
+    category: "📰 Ειδήσεις"
+    priority: MEDIUM
+
+  - name: "Newmoney"
+    url: "https://www.newmoney.gr/tag/epidotiseis/"
+    selector: "h2 a,h3 a,.article-title a"
+    base_url: "https://www.newmoney.gr"
+    category: "📰 Ειδήσεις"
+    priority: MEDIUM
+
+  - name: "Opportunity Desk"
+    url: "https://opportunitydesk.org/category/scholarships/"
+    selector: "h2 a,h3 a,.entry-title a"
+    base_url: "https://opportunitydesk.org"
+    category: "🌍 Διεθνή"
+    priority: LOW
+
+# ─── Ρυθμίσεις ειδοποιήσεων ─────────────────────────────────
+notifications:
+  apple_notes: true             # macOS μόνο
+  apple_notes_folder: "Opportunity Hunter"
+  mac_notification: true        # macOS μόνο
+  html_dashboard: true          # Παράγει dashboard.html
+  dashboard_auto_open: false    # Ανοίγει browser αυτόματα
+  telegram_enabled: false       # Ενεργοποίησε αν θέλεις Telegram
+  telegram_token: ""            # Βάλε το token σου από @BotFather
+  telegram_chat_id: ""          # Βάλε το chat_id σου
+
+# ─── Scheduler ───────────────────────────────────────────────
+schedule:
+  hour: 8
+  minute: 30
+
+# ─── Γενικά ─────────────────────────────────────────────────
+settings:
+  desc_max_length: 220
+  max_items_per_category: 12
+  max_upcoming_items: 10
+  fetch_descriptions: true      # false = πιο γρήγορο αλλά χωρίς περιγραφές
+  log_level: "INFO"

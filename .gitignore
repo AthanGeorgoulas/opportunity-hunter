@@ -1,0 +1,10 @@
+data/seen.db
+data/log.txt
+data/launchd_*.log
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+venv/
+results_*.txt
+results_*.html
