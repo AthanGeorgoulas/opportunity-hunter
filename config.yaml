@@ -235,14 +235,14 @@ notifications:
   mac_notification: true        # macOS μόνο
   html_dashboard: true          # Παράγει dashboard.html
   dashboard_auto_open: true    # Ανοίγει browser αυτόματα
-  telegram_enabled: false       # Ενεργοποίησε αν θέλεις Telegram
-  telegram_token: ""            # Βάλε το token σου από @BotFather
-  telegram_chat_id: ""          # Βάλε το chat_id σου
+  telegram_enabled: true       # Ενεργοποίησε αν θέλεις Telegram
+  telegram_token: "8766661010:AAF1yRtZm6tZpGQ7Wc5vE_kYt3CR11sIMvw"            # Βάλε το token σου από @BotFather
+  telegram_chat_id: "5068517302"          # Βάλε το chat_id σου
 
 # ─── Scheduler ───────────────────────────────────────────────
 schedule:
-  hour: 8
-  minute: 30
+  hour: 9
+  minute: 0
 
 # ─── Γενικά ─────────────────────────────────────────────────
 settings:
