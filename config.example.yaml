@@ -1,0 +1,169 @@
+# ============================================================
+#  OPPORTUNITY HUNTER — Example Configuration
+#  Copy this file to config.yaml and edit with your details:
+#  cp config.example.yaml config.yaml
+# ============================================================
+
+profile:
+  name: "Your Name"
+  age: 25
+  status: "unemployed"        # unemployed / employed / student
+  dypa_card: true             # true if you have an active DYPA card
+  family: "single"            # single / single_parent / married
+  income_annual: 5000         # Annual income in EUR
+  has_property: false
+  target_countries:
+    - "Greece"
+    - "Remote"
+    # - "Turkey"              # Uncomment to include Turkey opportunities
+
+# ─── High priority keywords (+10 score each) ────────────────
+# Add words likely to appear in titles of opportunities you care about
+keywords_high:
+  # Employment & subsidies
+  - "voucher"
+  - "επιδότηση"               # subsidy
+  - "επιχορήγηση"             # grant
+  - "κατάρτιση"               # training
+  - "εσπα"                    # ESPA (EU funds)
+  - "espa"
+  - "δυπα"                    # DYPA (unemployment office)
+  - "dypa"
+  # -- Add your field/sector below --
+  # - "telecom"
+  # - "software"
+  # - "nursing"
+  # - "accounting"
+  # - "engineering"
+  # Scholarships
+  - "υποτροφία"               # scholarship
+  - "scholarship"
+  - "grant"
+  - "erasmus"
+  # Youth programs
+  - "νέοι"                    # youth
+  - "νέους"
+  - "άνεργ"                   # unemployed
+  # European
+  - "horizon"
+  - "eures"
+  - "euraxess"
+
+# ─── Medium priority keywords (+5 score each) ───────────────
+keywords_medium:
+  - "πρακτικ"                 # internship/practical
+  - "internship"
+  - "μεταπτυχιακ"             # postgraduate
+  - "master"
+  - "phd"
+  - "remote"
+  - "τηλεργασ"                # telework
+  - "freelance"
+  - "ψηφιακ"                  # digital
+  - "digital"
+  - "startup"
+
+# ─── Upcoming program detection keywords ────────────────────
+keywords_upcoming:
+  - "σύντομα"                 # coming soon
+  - "προσεχώς"
+  - "upcoming"
+  - "coming soon"
+  - "θα ανοίξει"              # will open
+  - "αναμένεται"              # expected
+  - "νέα πρόσκληση"           # new call
+  - "νέος κύκλος"             # new round
+  - "new call"
+  - "under preparation"
+  - "προεγγραφή"              # pre-registration
+
+# ─── Sources to monitor ─────────────────────────────────────
+# Add or remove sources. priority: HIGH / MEDIUM / LOW
+sources:
+  - name: "DYPA — News"
+    url: "https://www.dypa.gov.gr/nea-anakoinoseis"
+    selector: "h2 a,h3 a,article a,.views-row a"
+    base_url: "https://www.dypa.gov.gr"
+    category: "Greek Government"
+    priority: HIGH
+
+  - name: "DYPA — Programs"
+    url: "https://www.dypa.gov.gr/programmata"
+    selector: "h2 a,h3 a,.views-row a"
+    base_url: "https://www.dypa.gov.gr"
+    category: "Greek Government"
+    priority: HIGH
+
+  - name: "ESPA"
+    url: "https://www.espa.gr/el/pages/staticProkirixeis.aspx"
+    selector: "table a,h3 a,td a"
+    base_url: "https://www.espa.gr"
+    category: "EU Funds"
+    priority: HIGH
+
+  - name: "gov.gr"
+    url: "https://www.gov.gr/ipiresies/oikonomia-kai-forologhia/epidedomata"
+    selector: "h3 a,h2 a,.service-item a"
+    base_url: "https://www.gov.gr"
+    category: "Greek Government"
+    priority: HIGH
+
+  - name: "EURES Jobs"
+    url: "https://eures.europa.eu/jobs_en?page=1&keywords=your+keywords&country=GR"
+    selector: "h2 a,h3 a,.job-title a"
+    base_url: "https://eures.europa.eu"
+    category: "European"
+    priority: HIGH
+
+  - name: "EURAXESS"
+    url: "https://euraxess.ec.europa.eu/jobs/search?keywords=your+keywords"
+    selector: "h3 a,h2 a"
+    base_url: "https://euraxess.ec.europa.eu"
+    category: "European"
+    priority: MEDIUM
+
+  - name: "EU Youth Portal"
+    url: "https://youth.europa.eu/go/en/opportunities_en"
+    selector: "h3 a,h2 a,.opportunity a"
+    base_url: "https://youth.europa.eu"
+    category: "European"
+    priority: MEDIUM
+
+  - name: "Opportunity Desk"
+    url: "https://opportunitydesk.org/category/scholarships/"
+    selector: "h2 a,h3 a,.entry-title a"
+    base_url: "https://opportunitydesk.org"
+    category: "International"
+    priority: LOW
+
+  # ── Add your own sources below ──
+  # - name: "My Custom Site"
+  #   url: "https://example.com/news"
+  #   selector: "h2 a, h3 a, article a"
+  #   base_url: "https://example.com"
+  #   category: "Custom"
+  #   priority: HIGH
+
+# ─── Notifications ──────────────────────────────────────────
+notifications:
+  apple_notes: true            # macOS only
+  apple_notes_folder: "Opportunity Hunter"
+  mac_notification: true       # macOS only
+  html_dashboard: true         # Generates dashboard.html after every run
+  dashboard_auto_open: false   # true = auto-opens browser after run
+  telegram_enabled: false      # true = sends Telegram message
+  telegram_token: ""           # Get from @BotFather on Telegram
+  telegram_chat_id: ""         # Get from @userinfobot on Telegram
+
+# ─── Schedule (macOS LaunchAgent via setup.sh) ──────────────
+schedule:
+  hour: 8
+  minute: 30
+
+# ─── General settings ───────────────────────────────────────
+settings:
+  desc_max_length: 220         # Max chars per opportunity description
+  max_items_per_category: 12   # Max items per category in dashboard
+  max_upcoming_items: 10       # Max upcoming programs shown
+  fetch_descriptions: false    # true = slower but adds descriptions
+  log_level: "INFO"
