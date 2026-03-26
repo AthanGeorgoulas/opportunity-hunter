@@ -561,7 +561,8 @@ def main():
 
     if not all_new:
         log("✅ Δεν βρέθηκαν νέες ευκαιρίες σήμερα.")
-        mac_notify("Opportunity Hunter", "✅ Ολοκληρώθηκε", "Δεν βρέθηκαν νέες ευκαιρίες.")
+        dashboard_link = f"file:///Users/thanasis/OpportunityHunter/dashboard.html"
+        mac_notify("Opportunity Hunter", "✅ Ολοκληρώθηκε", f"📊 {dashboard_link}")
         today_str = date.today().strftime("%d/%m/%Y")
         dashboard_html = build_dashboard(today_str, [], [], {}, [])
         DASHBOARD_PATH.write_text(dashboard_html, encoding="utf-8")
@@ -593,9 +594,10 @@ def main():
 
     # ── Mac Notification ──
     high_count = len([x for x in all_new if x["priority"] == "HIGH"])
+    dashboard_link = f"file:///Users/thanasis/OpportunityHunter/dashboard.html"
     mac_notify("🎯 Opportunity Hunter",
-               f"{len(all_new)} νέες ευκαιρίες!",
-               f"🔴 Υψηλή:{high_count} 🔮 Προσεχείς:{len(upcoming)} | Άνοιξε Dashboard")
+               f"{len(all_new)} νέες ευκαιρίες! 🔴 Υψηλή:{high_count}",
+               f"📊 {dashboard_link}")
 
     # ── Telegram ──
     telegram_notify(build_telegram_summary(active, upcoming))
