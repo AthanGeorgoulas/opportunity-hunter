@@ -8,3 +8,5 @@ __pycache__/
 venv/
 results_*.txt
 results_*.html
+dashboard.html
+data/
