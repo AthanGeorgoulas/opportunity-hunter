@@ -193,7 +193,7 @@ def badge(p):
 def scrape(source):
     results = []
     try:
-        r = requests.get(source["url"], headers=HEADERS, timeout=15, verify=False)
+        r = requests.get(source["url"], headers=HEADERS, timeout=8, verify=False)
         r.encoding = r.apparent_encoding
         soup = BeautifulSoup(r.text, "html.parser")
         for sel in [s.strip() for s in source["selector"].split(",")]:
@@ -415,7 +415,7 @@ def build_dashboard(today_str, active, upcoming, by_cat, history):
 
 <div class="topbar">
   <h1>🎯 Opportunity Hunter</h1>
-  <div class="meta">📅 {today_str} &nbsp;|&nbsp; {CFG.get('profile',{{}}).get('name','')}</div>
+  <div class="meta">📅 {today_str} &nbsp;|&nbsp; {CFG.get('profile', {}).get('name','')}</div>
 </div>
 
 <div class="stats-row">
@@ -562,6 +562,10 @@ def main():
     if not all_new:
         log("✅ Δεν βρέθηκαν νέες ευκαιρίες σήμερα.")
         mac_notify("Opportunity Hunter", "✅ Ολοκληρώθηκε", "Δεν βρέθηκαν νέες ευκαιρίες.")
+        today_str = date.today().strftime("%d/%m/%Y")
+        dashboard_html = build_dashboard(today_str, [], [], {}, [])
+        DASHBOARD_PATH.write_text(dashboard_html, encoding="utf-8")
+        log(f"✅ Dashboard: {DASHBOARD_PATH}")
         conn.close(); return
 
     by_cat = {}

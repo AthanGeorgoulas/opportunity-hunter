@@ -234,7 +234,7 @@ notifications:
   apple_notes_folder: "Opportunity Hunter"
   mac_notification: true        # macOS μόνο
   html_dashboard: true          # Παράγει dashboard.html
-  dashboard_auto_open: false    # Ανοίγει browser αυτόματα
+  dashboard_auto_open: true    # Ανοίγει browser αυτόματα
   telegram_enabled: false       # Ενεργοποίησε αν θέλεις Telegram
   telegram_token: ""            # Βάλε το token σου από @BotFather
   telegram_chat_id: ""          # Βάλε το chat_id σου
@@ -249,5 +249,5 @@ settings:
   desc_max_length: 220
   max_items_per_category: 12
   max_upcoming_items: 10
-  fetch_descriptions: true      # false = πιο γρήγορο αλλά χωρίς περιγραφές
+  fetch_descriptions: false      # false = πιο γρήγορο αλλά χωρίς περιγραφές
   log_level: "INFO"
